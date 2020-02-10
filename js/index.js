@@ -46,3 +46,7 @@ const navLinks = document.querySelectorAll('header nav a');
 navLinks.forEach((link, index) => {
   link.textContent = siteContent['nav'][`nav-item-${index + 1}`];
 });
+
+// Update cta image
+const image = document.getElementById('cta-img');
+image.src = siteContent.cta["img-src"];
