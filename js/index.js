@@ -86,3 +86,9 @@ textContents[1].lastElementChild.textContent = siteContent["main-content"]["prod
 // Vision
 textContents[2].firstElementChild.textContent = siteContent["main-content"]["vision-h4"];
 textContents[2].lastElementChild.textContent = siteContent["main-content"]["vision-content"];
+
+// Update contact
+document.querySelector('.contact h4').textContent = siteContent.contact["contact-h4"];
+document.querySelectorAll('.contact p')[0].innerHTML = siteContent.contact.address.slice(0, 18) + '<br>' + siteContent.contact.address.slice(18);
+document.querySelectorAll('.contact p')[1].textContent = siteContent.contact.phone;
+document.querySelectorAll('.contact p')[2].textContent = siteContent.contact.email;
