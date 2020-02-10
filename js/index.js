@@ -113,12 +113,22 @@ document.querySelector('footer p').textContent = siteContent.footer.copyright;
 
 
 // Add event listener to button
-// Function
-const changeBackgroundColor = () => {
-  document.body.addEventListener('mousemove', (e) => {
+// Functions
+let changeColorOnMouseMove = (e) => {
     document.querySelector('.container').style.backgroundColor = '#fff';
     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 0`;
-  });
+}
+
+const buttonClick = (e) => {
+  if (e.target.textContent === 'Get Started') {
+    document.body.addEventListener('mousemove', changeColorOnMouseMove);
+    e.target.textContent = 'Stop';
+  } else {
+    console.log('itshere');
+    document.body.removeEventListener('mousemove', changeColorOnMouseMove);
+    document.body.style.backgroundColor = '#fff';
+    e.target.textContent = 'Get Started';
+  }
 }
 // Add event listener
-ctaText.querySelector('button').addEventListener('click', changeBackgroundColor);
+ctaText.querySelector('button').addEventListener('click', buttonClick);
