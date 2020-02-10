@@ -92,3 +92,6 @@ document.querySelector('.contact h4').textContent = siteContent.contact["contact
 document.querySelectorAll('.contact p')[0].innerHTML = siteContent.contact.address.slice(0, 18) + '<br>' + siteContent.contact.address.slice(18);
 document.querySelectorAll('.contact p')[1].textContent = siteContent.contact.phone;
 document.querySelectorAll('.contact p')[2].textContent = siteContent.contact.email;
+
+// Footer
+document.querySelector('footer p').textContent = siteContent.footer.copyright;
