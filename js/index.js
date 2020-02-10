@@ -45,6 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 const navLinks = document.querySelectorAll('header nav a');
 navLinks.forEach((link, index) => {
   link.textContent = siteContent['nav'][`nav-item-${index + 1}`];
+  link.style.color = 'green';
 });
 
 // Update cta image
