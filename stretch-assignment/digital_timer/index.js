@@ -1,4 +1,5 @@
 let globalMsTens = 0;
+let interval = 0;
 
 const updateTimer = () => {
     globalMsTens += 1;    
@@ -25,4 +26,13 @@ const updateTimer = () => {
 
 }
 
-let interval = setInterval(updateTimer, 10);
+const onButtonClick = () => {
+    globalMsTens = 0;
+    interval = setInterval(updateTimer, 10);
+}
+
+const startButton = document.createElement('button');
+startButton.textContent = 'Start';
+startButton.addEventListener('click', onButtonClick);
+
+document.querySelector('body').prepend(startButton);
