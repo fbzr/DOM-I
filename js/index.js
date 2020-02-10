@@ -66,3 +66,7 @@ let textContents = topContent.getElementsByClassName('text-content');
 // Features
 textContents[0].querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
 textContents[0].querySelector('p').textContent = siteContent["main-content"]["features-content"];
+
+// About
+textContents[1].querySelector('h4').textContent = siteContent["main-content"]["about-h4"];
+textContents[1].querySelector('p').textContent = siteContent["main-content"]["about-content"];
