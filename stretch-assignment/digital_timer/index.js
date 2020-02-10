@@ -4,11 +4,13 @@ link.href = 'https://fonts.googleapis.com/css?family=Orbitron&display=swap';
 link.rel = 'stylesheet';
 document.head.appendChild(link);
 // Change font
-document.body.style.fontFamily = "'Orbitron', sans-serif";
+document.body.style.backgroundColor = '#eee';
+document.body.querySelector('*').style.fontFamily = "'Orbitron', sans-serif";
 // Give width to digits except #colon
 document.querySelectorAll('.digit:not(#colon)').forEach(element => {
     element.textContent = 0;
     element.style.width = '70px';
+    element.style.color = '#ddd';
 });
 
 
@@ -30,7 +32,7 @@ const updateTimer = () => {
             digits[i].style.color = 'red';
         }
 
-        document.querySelector('button').disabled = false;
+        document.querySelector('#startBtn').disabled = false;
         clearInterval(interval);
     }
 
@@ -38,27 +40,58 @@ const updateTimer = () => {
     document.getElementById('secondOnes').textContent = secondOnes;
     document.getElementById('msHundreds').textContent = msHunreds;
     document.getElementById('msTens').textContent = msTens;
-
 }
 
-const onButtonClick = (e) => {
+const startButtonClick = (e) => {
     globalMsTens = 0;
     interval = setInterval(updateTimer, 10);
     e.target.disabled = true;
 }
 
-// Create start button
+const resetButtonClick = (e) => {
+    globalMsTens = 0;
+
+    // Stop setInterval method
+    clearInterval(interval);
+
+    // Reset digits
+    document.getElementById('secondTens').textContent = '0';
+    document.getElementById('secondOnes').textContent = '0';
+    document.getElementById('msHundreds').textContent = '0';
+    document.getElementById('msTens').textContent = '0';
+
+    // Enable start button
+    document.querySelector('#startBtn').disabled = false;
+}
+
+// Create buttons container 
 const buttonContainer = document.createElement('div');
-buttonContainer.style.width = '100%';
-const startButton = document.createElement('button');
-startButton.textContent = 'Start';
-startButton.addEventListener('click', onButtonClick);
-startButton.style.width = '170px';
-startButton.style.height = '50px';
-buttonContainer.appendChild(startButton);
 buttonContainer.style.display = 'flex';
 buttonContainer.style.justifyContent = 'center';
 buttonContainer.style.alignContent = 'center';
+buttonContainer.style.width = '100%';
+
+// Create start button
+const startButton = document.createElement('button');
+startButton.id = 'startBtn';
+startButton.textContent = 'Start';
+startButton.addEventListener('click', startButtonClick);
+startButton.style.fontSize = '24px';
+startButton.style.width = '170px';
+startButton.style.height = '50px';
+// Append button to container
+buttonContainer.appendChild(startButton);
+
+// Create reset button
+const resetButton = document.createElement('button');
+resetButton.id = 'resetBtn';
+resetButton.textContent = 'Reset';
+resetButton.addEventListener('click', resetButtonClick);
+resetButton.style.fontSize = '24px';
+resetButton.style.width = '170px';
+resetButton.style.height = '50px';
+// Append button to container
+buttonContainer.appendChild(resetButton);
 
 const digitsContainer = document.querySelector('.digits');
 digitsContainer.appendChild(buttonContainer);
@@ -67,11 +100,10 @@ document.body.style.display = 'flex';
 document.body.style.height = '100vh';
 document.body.style.justifyContent = 'center';
 document.body.style.alignContent = 'center';
-digitsContainer.style.backgroundColor = '#666';
+digitsContainer.style.backgroundColor = '#333';
 digitsContainer.style.width = '50%';
 digitsContainer.style.height = '50vh';
 digitsContainer.style.display = 'flex';
 digitsContainer.style.flexWrap = 'wrap';
 digitsContainer.style.justifyContent = 'center';
 digitsContainer.style.alignContent = 'center';
-// document.querySelector('body').prepend(startButton);
