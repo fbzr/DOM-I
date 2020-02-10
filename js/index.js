@@ -46,13 +46,13 @@ const navLinks = document.querySelectorAll('header nav a');
 
 // Create new nav link with prepend
 let newLink = document.createElement('a');
-newLink.textContent = 'prepend()';
+newLink.textContent = 'Home';
 newLink.style.color = 'green';
 newLink.href = '#';
 document.querySelector('nav').prepend(newLink);
 
 newLink = document.createElement('a');
-newLink.textContent = 'appendChild()';
+newLink.textContent = 'Fun facts';
 newLink.style.color = 'green';
 newLink.href = '#';
 document.querySelector('nav').appendChild(newLink);

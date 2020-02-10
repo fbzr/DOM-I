@@ -17,9 +17,6 @@ document.querySelectorAll('.digit').forEach(element => {
     element.style.color = '#ddd';
 });
 
-
-
-
 let globalMsTens = 0;
 let interval = 0;
 
