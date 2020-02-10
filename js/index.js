@@ -131,4 +131,4 @@ const buttonClick = (e) => {
   }
 }
 // Add event listener
-ctaText.querySelector('button').addEventListener('click', buttonClick);
+document.querySelector('button').addEventListener('click', buttonClick);
