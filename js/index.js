@@ -58,3 +58,7 @@ ctaText.querySelector('h1').innerHTML = headerText.slice(0, 3) + '<br>' + header
 
 // Update CTA button
 ctaText.querySelector('button').textContent = siteContent.cta.button;
+
+// Update main content - top content
+const topContent = document.querySelector('.top-content');
+let textContents = topContent.getElementsByClassName('text-content');
