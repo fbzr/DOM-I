@@ -1,17 +1,23 @@
 // Add link to google font to document.head
 const link = document.createElement('link');
-link.href = 'https://fonts.googleapis.com/css?family=Orbitron&display=swap';
+link.href = 'https://fonts.googleapis.com/css?family=Orbitron:900&display=swap';
 link.rel = 'stylesheet';
 document.head.appendChild(link);
 // Change font
 document.body.style.backgroundColor = '#eee';
 document.body.querySelector('*').style.fontFamily = "'Orbitron', sans-serif";
-// Give width to digits except #colon
+// Give width and initiate with 0 all digits except #colon
 document.querySelectorAll('.digit:not(#colon)').forEach(element => {
     element.textContent = 0;
-    element.style.width = '70px';
+    element.style.width = '100px';
+});
+// Change font size and color of all digits
+document.querySelectorAll('.digit').forEach(element => {
+    element.style.fontSize = '120px';
     element.style.color = '#ddd';
 });
+
+
 
 
 let globalMsTens = 0;
