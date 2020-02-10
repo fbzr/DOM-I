@@ -16,6 +16,7 @@ const updateTimer = () => {
             digits[i].style.color = 'red';
         }
 
+        document.querySelector('button').disabled = false;
         clearInterval(interval);
     }
 
@@ -26,9 +27,10 @@ const updateTimer = () => {
 
 }
 
-const onButtonClick = () => {
+const onButtonClick = (e) => {
     globalMsTens = 0;
     interval = setInterval(updateTimer, 10);
+    e.target.disabled = true;
 }
 
 const startButton = document.createElement('button');
