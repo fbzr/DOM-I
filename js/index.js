@@ -62,3 +62,7 @@ ctaText.querySelector('button').textContent = siteContent.cta.button;
 // Update main content - top content
 const topContent = document.querySelector('.top-content');
 let textContents = topContent.getElementsByClassName('text-content');
+
+// Features
+textContents[0].querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
+textContents[0].querySelector('p').textContent = siteContent["main-content"]["features-content"];
