@@ -80,3 +80,6 @@ textContents = bottomContent.getElementsByTagName('div');
 // Services
 textContents[0].firstElementChild.textContent = siteContent["main-content"]["services-h4"];
 textContents[0].lastElementChild.textContent = siteContent["main-content"]["services-content"];
+// Product
+textContents[1].firstElementChild.textContent = siteContent["main-content"]["product-h4"];
+textContents[1].lastElementChild.textContent = siteContent["main-content"]["product-content"];
