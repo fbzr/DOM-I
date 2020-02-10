@@ -55,3 +55,6 @@ image.src = siteContent.cta["img-src"];
 const ctaText = document.querySelector('.cta-text');
 const headerText = siteContent.cta.h1;
 ctaText.querySelector('h1').innerHTML = headerText.slice(0, 3) + '<br>' + headerText.slice(3, 6) + '<br>' + headerText.slice(6);
+
+// Update CTA button
+ctaText.querySelector('button').textContent = siteContent.cta.button;
