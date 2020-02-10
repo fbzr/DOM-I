@@ -50,3 +50,8 @@ navLinks.forEach((link, index) => {
 // Update cta image
 const image = document.getElementById('cta-img');
 image.src = siteContent.cta["img-src"];
+
+// Update CTA header
+const ctaText = document.querySelector('.cta-text');
+const headerText = siteContent.cta.h1;
+ctaText.querySelector('h1').innerHTML = headerText.slice(0, 3) + '<br>' + headerText.slice(3, 6) + '<br>' + headerText.slice(6);
