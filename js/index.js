@@ -83,3 +83,6 @@ textContents[0].lastElementChild.textContent = siteContent["main-content"]["serv
 // Product
 textContents[1].firstElementChild.textContent = siteContent["main-content"]["product-h4"];
 textContents[1].lastElementChild.textContent = siteContent["main-content"]["product-content"];
+// Vision
+textContents[2].firstElementChild.textContent = siteContent["main-content"]["vision-h4"];
+textContents[2].lastElementChild.textContent = siteContent["main-content"]["vision-content"];
