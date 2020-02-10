@@ -73,3 +73,10 @@ textContents[1].querySelector('p').textContent = siteContent["main-content"]["ab
 
 // Update middle image source
 document.getElementById('middle-img').src = siteContent["main-content"]["middle-img-src"];
+
+// Update bottom content
+const bottomContent = document.querySelector('.bottom-content');
+textContents = bottomContent.getElementsByTagName('div');
+// Services
+textContents[0].firstElementChild.textContent = siteContent["main-content"]["services-h4"];
+textContents[0].lastElementChild.textContent = siteContent["main-content"]["services-content"];
