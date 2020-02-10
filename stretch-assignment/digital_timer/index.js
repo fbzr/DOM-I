@@ -1,3 +1,17 @@
+// Add link to google font to document.head
+const link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css?family=Orbitron&display=swap';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
+// Change font
+document.body.style.fontFamily = "'Orbitron', sans-serif";
+
+document.querySelectorAll('.digit:not(#colon)').forEach(element => {
+    element.textContent = 0;
+    element.style.width = '70px';
+});
+
+
 let globalMsTens = 0;
 let interval = 0;
 
