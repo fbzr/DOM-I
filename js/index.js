@@ -43,6 +43,20 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // Update text of nav-items
 const navLinks = document.querySelectorAll('header nav a');
+
+// Create new nav link with prepend
+let newLink = document.createElement('a');
+newLink.textContent = 'prepend()';
+newLink.style.color = 'green';
+newLink.href = '#';
+document.querySelector('nav').prepend(newLink);
+
+newLink = document.createElement('a');
+newLink.textContent = 'appendChild()';
+newLink.style.color = 'green';
+newLink.href = '#';
+document.querySelector('nav').appendChild(newLink);
+
 navLinks.forEach((link, index) => {
   link.textContent = siteContent['nav'][`nav-item-${index + 1}`];
   link.style.color = 'green';
@@ -96,3 +110,15 @@ document.querySelectorAll('.contact p')[2].textContent = siteContent.contact.ema
 
 // Footer
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+
+// Add event listener to button
+// Function
+const changeBackgroundColor = () => {
+  document.body.addEventListener('mousemove', (e) => {
+    document.querySelector('.container').style.backgroundColor = '#fff';
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 0`;
+  });
+}
+// Add event listener
+ctaText.querySelector('button').addEventListener('click', changeBackgroundColor);
