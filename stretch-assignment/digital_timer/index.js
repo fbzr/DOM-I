@@ -47,13 +47,19 @@ const updateTimer = () => {
 
 const startButtonClick = (e) => {
     globalMsTens = 0;
+    // Change font color to '#ddd';
+    let digits = document.querySelectorAll('.digit');
+    digits.forEach(digit => digit.style.color = '#ddd');
+
     interval = setInterval(updateTimer, 10);
     e.target.disabled = true;
 }
 
 const resetButtonClick = (e) => {
     globalMsTens = 0;
-
+    // Change font color to '#ddd';
+    let digits = document.querySelectorAll('.digit');
+    digits.forEach(digit => digit.style.color = '#ddd');
     // Stop setInterval method
     clearInterval(interval);
 
